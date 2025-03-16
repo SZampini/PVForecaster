@@ -3,3 +3,4 @@ requirements.txt
 utils.txt
 data/*
 solfor/*
+src/models/__pycache__/*

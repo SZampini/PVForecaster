@@ -6,7 +6,6 @@ import argparse
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from sklearn.preprocessing import LabelEncoder
 from models.nn import PVNN  # Import NN model structure
 
 def get_historical_weather(date, api_key):
@@ -121,6 +120,8 @@ parser = argparse.ArgumentParser(description="Solar Forecaster Inference")
 parser.add_argument("--model", type=str, required=False, help="Model to use (xgboost, nn, rf)", default="xgboost")
 parser.add_argument("--date", type=str, required=False, help="Date for prediction (YYYY-MM-DD)", default="2025-03-10")
 parser.add_argument("--api_key", type=str, required=True, help="OpenWeather API key")
+parser.add_argument("--latitude", type=str, required=True, help="Latitude")
+parser.add_argument("--longitude", type=str, required=True, help="Longitude")
 args = parser.parse_args()
 
 # Assign arguments
@@ -129,8 +130,8 @@ date_input = args.date
 API_KEY = args.api_key
 
 # OpenWeather API Configuration
-LATITUDE = "xx"
-LONGITUDE = "xx"
+LATITUDE = args.latitude
+LONGITUDE = args.longitude
 
 MODEL_SAVE_PATH = "saved_models"
 
