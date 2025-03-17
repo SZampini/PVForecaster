@@ -32,7 +32,7 @@ This project aims to provide forecasts to optimize energy consumption and improv
 To start the forecasting process, run:
 
 ```bash
-python inference.py --api_key YOUR_OPENWEATHER_API_KEY
+python inference.py --date YYYY-MM-DD --api_key YOUR_OPENWEATHER_API_KEY --latitude YOUR_LATITUDE --longitude YOUR_LONGITUDE
 ```
 
 ## Configuration
